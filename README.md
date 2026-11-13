@@ -24,9 +24,19 @@ This portfolio showcases professional experience, technical skills, certificatio
 |---|---|
 | Data Engineering | Hadoop, Apache Spark, Apache Airflow, Dremio, SSIS, SSAS, SSRS |
 | Databases | SQL Server, MySQL, PostgreSQL, MongoDB, Sybase |
-| Cloud | Google Cloud Platform (GCP), AWS |
-| Visualization | Power BI, Apache Superset |
+| Cloud | Amazon Web Services (AWS), Google Cloud Platform (GCP) |
+| Visualization | Power BI |
 | Programming | Python |
+
+---
+
+## Projects
+
+| Project | Description | Tech |
+|---|---|---|
+| ETL Pipeline On-Premise | Enterprise ETL pipeline for multifinance reporting | SQL Server, SSIS, SSAS, SSRS, Power BI, Sybase |
+| Data Warehouse Migration | Migration from Sybase to distributed Big Data platform | Hadoop HDFS, Hive, Spark, Dremio, Python |
+| Hybrid Data Architecture | Hybrid pipeline orchestration with AWS and Airflow | Apache Airflow, AWS S3, Amazon Redshift, SQL Server, Python, Power BI |
 
 ---
 
@@ -37,7 +47,7 @@ This portfolio showcases professional experience, technical skills, certificatio
 - **Skills** – Technical stack by category
 - **Resume** – Work experience, education, and certifications
 - **Portfolio** – Data projects and web development work
-- **Contact** – Contact form and location
+- **Contact** – Contact form (Formspree) and location
 
 ---
 
