@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Migrasi Data Warehouse – Jonathan Immanuel</title>
+  <title>Data Warehouse Migration – Jonathan Immanuel</title>
   <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -15,9 +15,9 @@
 <body class="project-page">
 
   <nav class="project-nav">
-    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Kembali ke Portfolio</a>
-    <span class="project-nav-title">Detail Proyek</span>
-    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Unduh CV</a>
+    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Back to Portfolio</a>
+    <span class="project-nav-title">Project Detail</span>
+    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Download CV</a>
   </nav>
 
   <main class="project-main">
@@ -25,38 +25,38 @@
     <div class="project-hero" data-aos="fade-up">
       <div class="project-meta-top">
         <span class="project-tag">Data Engineering</span>
-        <span class="project-tag">Migrasi</span>
+        <span class="project-tag">Migration</span>
         <span class="project-tag">Big Data</span>
       </div>
-      <h1>Migrasi Data Warehouse<br>ke Platform Terdistribusi</h1>
-      <p class="project-lead">Migrasi end-to-end dari data warehouse on-premise berbasis Sybase ke platform Big Data terdistribusi menggunakan Hadoop dan Hive — memungkinkan skalabilitas horizontal dan analitik real-time untuk klien multifinance enterprise di PT. Adicipta Inovasi Teknologi.</p>
+      <h1>Data Warehouse Migration<br>to Distributed Platform</h1>
+      <p class="project-lead">End-to-end migration from a legacy on-premise data warehouse to a Hadoop-based distributed Big Data platform — enabling horizontal scalability, faster query performance, and self-service analytics at enterprise scale.</p>
     </div>
 
     <div class="project-image" data-aos="fade-up">
-      <img src="portfolio/Mockup - Project 2.png" alt="Arsitektur Migrasi Data Warehouse">
+      <img src="portfolio/Mockup - Project 2.png" alt="Data Warehouse Migration to Distributed Platform">
     </div>
 
     <div class="project-body">
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-exclamation-circle"></i> Latar Belakang</h2>
-        <p>Klien multifinance di PT. Adicipta Inovasi Teknologi (AdIns) mengoperasikan data warehouse monolitik berbasis Sybase yang tidak lagi mampu menangani pertumbuhan volume data transaksi pembiayaan. Sistem mengalami query timeout pada jam sibuk, kegagalan batch malam hari, dan tidak mampu mendukung kebutuhan analitik real-time. Skalabilitas vertikal RDBMS konvensional sudah mencapai batasnya, sementara volume data terus bertumbuh seiring ekspansi portofolio klien.</p>
+        <h2><i class="bi bi-exclamation-circle"></i> Background</h2>
+        <p>A monolithic data warehouse had reached its vertical scaling limit, causing query timeouts during peak hours and overnight batch failures. The system could no longer support growing data volumes or real-time analytical demands. Storage costs were escalating, and the architecture lacked the flexibility needed for modern data workloads.</p>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-lightbulb"></i> Solusi</h2>
-        <p>Memimpin migrasi dari Sybase ke ekosistem Hadoop, dengan Hive sebagai lapisan query terdistribusi dan Dremio sebagai platform akses data lake untuk tim analis. Migrasi dilakukan secara bertahap dengan strategi parallel run untuk memastikan zero downtime pada operasional bisnis klien.</p>
+        <h2><i class="bi bi-lightbulb"></i> Approach</h2>
+        <p>Led the migration from a traditional RDBMS to a Hadoop ecosystem, introducing Hive as the distributed query layer and Dremio as the self-service data lake engine. The migration was executed in phases — parallel run, data validation, cutover, and decommission — ensuring zero downtime throughout the process.</p>
         <ul class="solution-list">
-          <li><i class="bi bi-check2"></i> Strategi migrasi bertahap: parallel run → validasi data → cutover → decommission</li>
-          <li><i class="bi bi-check2"></i> Implementasi Hive partitioning dan bucketing untuk optimasi performa query pelaporan multifinance</li>
-          <li><i class="bi bi-check2"></i> Deployment Dremio sebagai self-service data lake engine untuk tim analis bisnis klien</li>
-          <li><i class="bi bi-check2"></i> Migrasi pipeline ETL dari SSIS ke Spark job untuk workload agregasi data yang kompleks</li>
-          <li><i class="bi bi-check2"></i> Pembangunan lapisan data mart baru untuk kebutuhan pelaporan regulasi OJK</li>
+          <li><i class="bi bi-check2"></i> Phased migration strategy: parallel run → data validation → cutover → decommission</li>
+          <li><i class="bi bi-check2"></i> Hive partitioning and bucketing for optimized query performance on large datasets</li>
+          <li><i class="bi bi-check2"></i> Dremio deployment as a self-service data lake engine for business analysts</li>
+          <li><i class="bi bi-check2"></i> ETL pipeline migration from SSIS to Apache Spark for complex aggregation workloads</li>
+          <li><i class="bi bi-check2"></i> New data mart layer built to support regulatory and operational reporting requirements</li>
         </ul>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-stack"></i> Teknologi yang Digunakan</h2>
+        <h2><i class="bi bi-stack"></i> Tech Stack</h2>
         <div class="tech-grid">
           <div class="tech-item"><i class="bi bi-hdd-network"></i><span>Hadoop (HDFS)</span></div>
           <div class="tech-item"><i class="bi bi-table"></i><span>Apache Hive</span></div>
@@ -68,19 +68,19 @@
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-graph-up-arrow"></i> Hasil & Dampak</h2>
+        <h2><i class="bi bi-graph-up-arrow"></i> Outcome</h2>
         <div class="impact-grid">
           <div class="impact-card">
             <span class="impact-number">10TB+</span>
-            <span class="impact-desc">Data harian diproses tanpa bottleneck</span>
+            <span class="impact-desc">Daily data processed without bottleneck or timeout</span>
           </div>
           <div class="impact-card">
             <span class="impact-number">60%</span>
-            <span class="impact-desc">Peningkatan performa query secara keseluruhan</span>
+            <span class="impact-desc">Overall query performance improvement</span>
           </div>
           <div class="impact-card">
-            <span class="impact-number">Hari → Jam</span>
-            <span class="impact-desc">Waktu pemrosesan laporan insentif Sales</span>
+            <span class="impact-number">Zero</span>
+            <span class="impact-desc">Downtime during the full migration process</span>
           </div>
         </div>
       </div>
@@ -88,8 +88,8 @@
     </div>
 
     <div class="project-nav-bottom" data-aos="fade-up">
-      <a href="etl-pipeline-on-premise.html" class="btn-outline-project"><i class="bi bi-arrow-left"></i> Proyek Sebelumnya</a>
-      <a href="arsitektur-data-hybrid.html" class="btn-primary-project">Proyek Berikutnya <i class="bi bi-arrow-right"></i></a>
+      <a href="etl-pipeline-on-premise.html" class="btn-outline-project"><i class="bi bi-arrow-left"></i> Previous</a>
+      <a href="arsitektur-data-hybrid.html" class="btn-primary-project">Next Project <i class="bi bi-arrow-right"></i></a>
     </div>
 
   </main>

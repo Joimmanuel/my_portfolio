@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Arsitektur Data Hybrid – Jonathan Immanuel</title>
+  <title>Hybrid Data Architecture – Jonathan Immanuel</title>
   <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -15,9 +15,9 @@
 <body class="project-page">
 
   <nav class="project-nav">
-    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Kembali ke Portfolio</a>
-    <span class="project-nav-title">Detail Proyek</span>
-    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Unduh CV</a>
+    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Back to Portfolio</a>
+    <span class="project-nav-title">Project Detail</span>
+    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Download CV</a>
   </nav>
 
   <main class="project-main">
@@ -28,35 +28,35 @@
         <span class="project-tag">Hybrid Cloud</span>
         <span class="project-tag">ML Pipeline</span>
       </div>
-      <h1>Arsitektur Data Hybrid<br>dengan Pipeline ML Scoring</h1>
-      <p class="project-lead">Perancangan platform data hybrid yang menghubungkan infrastruktur on-premise dengan cloud, terintegrasi dengan pipeline machine learning untuk collection scoring — meningkatkan efisiensi operasional penagihan pada perusahaan multifinance.</p>
+      <h1>Hybrid Data Architecture<br>with ML Scoring Pipeline</h1>
+      <p class="project-lead">Architecting a hybrid on-premise and cloud data platform integrated with a machine learning scoring pipeline — bridging the gap between data engineering and data science to enable automated, data-driven operational decisions.</p>
     </div>
 
     <div class="project-image" data-aos="fade-up">
-      <img src="portfolio/Mockup - Project 3.png" alt="Arsitektur Data Hybrid dengan ML Pipeline">
+      <img src="portfolio/Mockup - Project 3.png" alt="Hybrid Data Architecture with ML Pipeline">
     </div>
 
     <div class="project-body">
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-exclamation-circle"></i> Latar Belakang</h2>
-        <p>Klien multifinance membutuhkan modernisasi operasional penagihan dengan menghadirkan kemampuan prediktif berbasis machine learning. Sistem yang ada tidak memiliki kapabilitas ML sama sekali, dan tim collection sepenuhnya bergantung pada prioritisasi manual. Selain itu, infrastruktur data yang terfragmentasi — data transaksional on-premise tidak dapat terhubung langsung ke layanan ML berbasis cloud — menciptakan kesenjangan antara tim data engineering dan data science.</p>
+        <h2><i class="bi bi-exclamation-circle"></i> Background</h2>
+        <p>The existing data infrastructure was siloed — on-premise transactional data could not be easily connected to cloud-based ML services. Operational teams relied entirely on manual prioritization with no predictive capability. There was no automated pipeline to move data between environments, retrain models, or deliver scoring results back to operational systems in a timely manner.</p>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-lightbulb"></i> Solusi</h2>
-        <p>Merancang arsitektur hybrid yang menjembatani SQL Server on-premise dengan GCP untuk pelatihan dan inferensi model ML. Apache Airflow digunakan sebagai lapisan orkestrasi terpusat yang mengelola perpindahan data, jadwal retraining model, dan pengiriman hasil scoring kembali ke sistem operasional.</p>
+        <h2><i class="bi bi-lightbulb"></i> Approach</h2>
+        <p>Designed a hybrid architecture bridging an on-premise SQL Server data warehouse with GCP for ML model training and inference. Apache Airflow was deployed as the central orchestration layer, managing data movement, automated model retraining schedules, and scoring result delivery back to operational systems.</p>
         <ul class="solution-list">
-          <li><i class="bi bi-check2"></i> Pipeline hybrid: SQL Server on-premise → GCP BigQuery → model ML → hasil scoring</li>
-          <li><i class="bi bi-check2"></i> Deployment Airflow DAG untuk orkestrasi dan penjadwalan pipeline end-to-end</li>
-          <li><i class="bi bi-check2"></i> Implementasi model collection scoring dengan retraining otomatis setiap minggu</li>
-          <li><i class="bi bi-check2"></i> Framework automated unit testing menggunakan Spark dan Python</li>
-          <li><i class="bi bi-check2"></i> Dashboard real-time di Apache Superset dan Power BI untuk monitoring tim collection</li>
+          <li><i class="bi bi-check2"></i> Hybrid pipeline: on-premise SQL Server → GCP BigQuery → ML model → scoring results</li>
+          <li><i class="bi bi-check2"></i> Apache Airflow DAGs for end-to-end pipeline orchestration and scheduling</li>
+          <li><i class="bi bi-check2"></i> Automated weekly model retraining to keep scoring accuracy up to date</li>
+          <li><i class="bi bi-check2"></i> Automated unit testing framework using Apache Spark and Python</li>
+          <li><i class="bi bi-check2"></i> Real-time monitoring dashboards built with Apache Superset and Power BI</li>
         </ul>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-stack"></i> Teknologi yang Digunakan</h2>
+        <h2><i class="bi bi-stack"></i> Tech Stack</h2>
         <div class="tech-grid">
           <div class="tech-item"><i class="bi bi-calendar3"></i><span>Apache Airflow</span></div>
           <div class="tech-item"><i class="bi bi-lightning"></i><span>Apache Spark</span></div>
@@ -68,19 +68,19 @@
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-graph-up-arrow"></i> Hasil & Dampak</h2>
+        <h2><i class="bi bi-graph-up-arrow"></i> Outcome</h2>
         <div class="impact-grid">
           <div class="impact-card">
             <span class="impact-number">25%</span>
-            <span class="impact-desc">Peningkatan efisiensi pemulihan piutang</span>
+            <span class="impact-desc">Improvement in operational recovery efficiency</span>
           </div>
           <div class="impact-card">
             <span class="impact-number">40%</span>
-            <span class="impact-desc">Pengurangan waktu pengujian pipeline</span>
+            <span class="impact-desc">Reduction in pipeline testing time via automation</span>
           </div>
           <div class="impact-card">
-            <span class="impact-number">Mingguan</span>
-            <span class="impact-desc">Siklus retraining model otomatis</span>
+            <span class="impact-number">Weekly</span>
+            <span class="impact-desc">Automated model retraining cycle</span>
           </div>
         </div>
       </div>
@@ -88,8 +88,8 @@
     </div>
 
     <div class="project-nav-bottom" data-aos="fade-up">
-      <a href="migrasi-data-warehouse.html" class="btn-outline-project"><i class="bi bi-arrow-left"></i> Proyek Sebelumnya</a>
-      <a href="index.html#portfolio" class="btn-primary-project"><i class="bi bi-grid"></i> Semua Proyek</a>
+      <a href="migrasi-data-warehouse.html" class="btn-outline-project"><i class="bi bi-arrow-left"></i> Previous</a>
+      <a href="index.html#portfolio" class="btn-primary-project"><i class="bi bi-grid"></i> All Projects</a>
     </div>
 
   </main>

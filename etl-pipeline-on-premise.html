@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -15,9 +15,9 @@
 <body class="project-page">
 
   <nav class="project-nav">
-    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Kembali ke Portfolio</a>
-    <span class="project-nav-title">Detail Proyek</span>
-    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Unduh CV</a>
+    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Back to Portfolio</a>
+    <span class="project-nav-title">Project Detail</span>
+    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Download CV</a>
   </nav>
 
   <main class="project-main">
@@ -28,59 +28,59 @@
         <span class="project-tag">ETL</span>
         <span class="project-tag">On-Premise</span>
       </div>
-      <h1>ETL Pipeline<br>Arsitektur On-Premise</h1>
-      <p class="project-lead">Perancangan dan implementasi pipeline ETL on-premise untuk perusahaan multifinance enterprise — migrasi sistem pelaporan berbasis Sybase ke data warehouse SQL Server modern dengan orkestrasi SSIS.</p>
+      <h1>On-Premise ETL Pipeline<br>& Data Warehouse</h1>
+      <p class="project-lead">Designing and implementing a scalable on-premise ETL pipeline — migrating legacy reporting systems to a modern 3-layer SQL Server data warehouse, orchestrated with SSIS and visualized through Power BI.</p>
     </div>
 
     <div class="project-image" data-aos="fade-up">
-      <img src="portfolio/Mockup - Project 1.png" alt="Arsitektur ETL Pipeline On-Premise">
+      <img src="portfolio/Mockup - Project 1.png" alt="On-Premise ETL Pipeline Architecture">
     </div>
 
     <div class="project-body">
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-exclamation-circle"></i> Latar Belakang</h2>
-        <p>Klien multifinance menjalankan pelaporan bisnis kritis di atas database Sybase lama tanpa lapisan data warehouse yang memadai. Laporan dibuat secara manual dan membutuhkan waktu 2–3 hari, dengan inkonsistensi data yang sering terjadi antar departemen. Sistem tidak mampu menangani volume transaksi yang terus tumbuh hingga lebih dari 500 ribu record per hari.</p>
+        <h2><i class="bi bi-exclamation-circle"></i> Background</h2>
+        <p>The existing reporting system relied on a legacy database with no proper data warehouse layer. Reports were generated manually, taking 2–3 days to produce, with frequent data inconsistencies across departments. The system could not scale to handle growing transaction volumes, and there was no centralized source of truth for business decision-making.</p>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-lightbulb"></i> Solusi</h2>
-        <p>Merancang dan mengimplementasikan pipeline ETL on-premise menggunakan SQL Server sebagai target data warehouse, dengan SSIS sebagai lapisan orkestrasi. Arsitektur memperkenalkan model data 3 lapisan — Staging → ODS → Data Mart — untuk memastikan pemisahan yang jelas dan keterlacakan data secara end-to-end.</p>
+        <h2><i class="bi bi-lightbulb"></i> Approach</h2>
+        <p>Designed and implemented a full on-premise ETL pipeline using SQL Server as the data warehouse target and SSIS as the orchestration layer. The architecture introduced a 3-layer data model — Staging → ODS → Data Mart — ensuring clean data separation, lineage traceability, and reliable incremental loading.</p>
         <ul class="solution-list">
-          <li><i class="bi bi-check2"></i> Otomatisasi job ETL harian menggantikan proses pembuatan laporan manual</li>
-          <li><i class="bi bi-check2"></i> Strategi incremental load untuk menangani 500 ribu+ record harian secara efisien</li>
-          <li><i class="bi bi-check2"></i> Pembangunan SSAS cube untuk analisis multidimensi dengan query MDX</li>
-          <li><i class="bi bi-check2"></i> Deployment dashboard SSRS untuk pelaporan operasional dan eksekutif</li>
-          <li><i class="bi bi-check2"></i> Penerapan data quality check dan error logging di setiap tahap pipeline</li>
+          <li><i class="bi bi-check2"></i> Automated daily ETL jobs replacing manual report generation workflows</li>
+          <li><i class="bi bi-check2"></i> Incremental load strategy to efficiently handle 500K+ daily transaction records</li>
+          <li><i class="bi bi-check2"></i> SSAS multidimensional cubes for MDX-based analytical queries</li>
+          <li><i class="bi bi-check2"></i> SSRS dashboards for operational and executive-level reporting</li>
+          <li><i class="bi bi-check2"></i> Data quality checks and error logging at every pipeline stage</li>
         </ul>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-stack"></i> Teknologi yang Digunakan</h2>
+        <h2><i class="bi bi-stack"></i> Tech Stack</h2>
         <div class="tech-grid">
           <div class="tech-item"><i class="bi bi-database"></i><span>SQL Server 2019</span></div>
           <div class="tech-item"><i class="bi bi-arrow-left-right"></i><span>SSIS</span></div>
           <div class="tech-item"><i class="bi bi-cube"></i><span>SSAS (MDX)</span></div>
           <div class="tech-item"><i class="bi bi-file-bar-graph"></i><span>SSRS</span></div>
           <div class="tech-item"><i class="bi bi-bar-chart-line"></i><span>Power BI</span></div>
-          <div class="tech-item"><i class="bi bi-server"></i><span>Sybase (Sumber)</span></div>
+          <div class="tech-item"><i class="bi bi-server"></i><span>Sybase (Source)</span></div>
         </div>
       </div>
 
       <div class="project-section" data-aos="fade-up">
-        <h2><i class="bi bi-graph-up-arrow"></i> Hasil & Dampak</h2>
+        <h2><i class="bi bi-graph-up-arrow"></i> Outcome</h2>
         <div class="impact-grid">
           <div class="impact-card">
-            <span class="impact-number">2–3 Hari</span>
-            <span class="impact-desc">Waktu pembuatan laporan dipangkas menjadi <strong>hitungan menit</strong></span>
+            <span class="impact-number">2–3 Days</span>
+            <span class="impact-desc">Report generation time reduced to <strong>minutes</strong></span>
           </div>
           <div class="impact-card">
             <span class="impact-number">500K+</span>
-            <span class="impact-desc">Record harian diproses secara andal dan konsisten</span>
+            <span class="impact-desc">Daily records processed reliably with full consistency</span>
           </div>
           <div class="impact-card">
-            <span class="impact-number">100%</span>
-            <span class="impact-desc">Konsistensi data terjaga di seluruh departemen</span>
+            <span class="impact-number">3-Layer</span>
+            <span class="impact-desc">Clean data architecture: Staging → ODS → Data Mart</span>
           </div>
         </div>
       </div>
@@ -88,8 +88,8 @@
     </div>
 
     <div class="project-nav-bottom" data-aos="fade-up">
-      <a href="index.html#portfolio" class="btn-outline-project"><i class="bi bi-grid"></i> Semua Proyek</a>
-      <a href="migrasi-data-warehouse.html" class="btn-primary-project">Proyek Berikutnya <i class="bi bi-arrow-right"></i></a>
+      <a href="index.html#portfolio" class="btn-outline-project"><i class="bi bi-grid"></i> All Projects</a>
+      <a href="migrasi-data-warehouse.html" class="btn-primary-project">Next Project <i class="bi bi-arrow-right"></i></a>
     </div>
 
   </main>
