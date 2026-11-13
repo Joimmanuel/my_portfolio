@@ -26,32 +26,32 @@
       <div class="project-meta-top">
         <span class="project-tag">Data Engineering</span>
         <span class="project-tag">Hybrid Cloud</span>
-        <span class="project-tag">ML Pipeline</span>
+        <span class="project-tag">Orchestration</span>
       </div>
-      <h1>Hybrid Data Architecture<br>with ML Scoring Pipeline</h1>
-      <p class="project-lead">Architecting a hybrid on-premise and cloud data platform integrated with a machine learning scoring pipeline — bridging the gap between data engineering and data science to enable automated, data-driven operational decisions.</p>
+      <h1>Hybrid Data Architecture<br>& Pipeline Orchestration</h1>
+      <p class="project-lead">Designing a hybrid on-premise and cloud data platform with Apache Airflow as the central orchestration layer — automating complex data workflows, scheduling batch jobs, and delivering real-time operational dashboards.</p>
     </div>
 
     <div class="project-image" data-aos="fade-up">
-      <img src="portfolio/Mockup - Project 3.png" alt="Hybrid Data Architecture with ML Pipeline">
+      <img src="portfolio/Mockup - Project 3.png" alt="Hybrid Data Architecture & Pipeline Orchestration">
     </div>
 
     <div class="project-body">
 
       <div class="project-section" data-aos="fade-up">
         <h2><i class="bi bi-exclamation-circle"></i> Background</h2>
-        <p>The existing data infrastructure was siloed — on-premise transactional data could not be easily connected to cloud-based ML services. Operational teams relied entirely on manual prioritization with no predictive capability. There was no automated pipeline to move data between environments, retrain models, or deliver scoring results back to operational systems in a timely manner.</p>
+        <p>The existing data infrastructure was fragmented — on-premise transactional data in SQL Server could not be efficiently synchronized with cloud-based analytical workloads. Batch jobs were scheduled manually with no centralized monitoring, causing silent failures and data delays. Operational teams had no real-time visibility into pipeline health or data freshness, making it difficult to trust the reports being generated.</p>
       </div>
 
       <div class="project-section" data-aos="fade-up">
         <h2><i class="bi bi-lightbulb"></i> Approach</h2>
-        <p>Designed a hybrid architecture bridging an on-premise SQL Server data warehouse with GCP for ML model training and inference. Apache Airflow was deployed as the central orchestration layer, managing data movement, automated model retraining schedules, and scoring result delivery back to operational systems.</p>
+        <p>Designed a hybrid architecture connecting on-premise SQL Server with GCP for cloud-based processing and storage. Apache Airflow was deployed as the central orchestration layer, replacing all manual scheduling with automated, monitored DAG workflows. Dashboards were built in Apache Superset and Power BI to provide real-time operational visibility.</p>
         <ul class="solution-list">
-          <li><i class="bi bi-check2"></i> Hybrid pipeline: on-premise SQL Server → GCP BigQuery → ML model → scoring results</li>
-          <li><i class="bi bi-check2"></i> Apache Airflow DAGs for end-to-end pipeline orchestration and scheduling</li>
-          <li><i class="bi bi-check2"></i> Automated weekly model retraining to keep scoring accuracy up to date</li>
-          <li><i class="bi bi-check2"></i> Python-based automated testing framework for pipeline validation</li>
-          <li><i class="bi bi-check2"></i> Real-time monitoring dashboards built with Apache Superset and Power BI</li>
+          <li><i class="bi bi-check2"></i> Hybrid pipeline: on-premise SQL Server → GCP for cloud processing and storage</li>
+          <li><i class="bi bi-check2"></i> Apache Airflow DAGs replacing all manual batch job scheduling</li>
+          <li><i class="bi bi-check2"></i> Centralized pipeline monitoring with alerting on job failures and data delays</li>
+          <li><i class="bi bi-check2"></i> Python-based data transformation and validation scripts across pipeline stages</li>
+          <li><i class="bi bi-check2"></i> Real-time operational dashboards in Apache Superset and Power BI</li>
         </ul>
       </div>
 
@@ -71,16 +71,16 @@
         <h2><i class="bi bi-graph-up-arrow"></i> Outcome</h2>
         <div class="impact-grid">
           <div class="impact-card">
-            <span class="impact-number">25%</span>
-            <span class="impact-desc">Improvement in operational recovery efficiency</span>
+            <span class="impact-number">100%</span>
+            <span class="impact-desc">Manual batch scheduling replaced with automated Airflow DAGs</span>
           </div>
           <div class="impact-card">
-            <span class="impact-number">40%</span>
-            <span class="impact-desc">Reduction in pipeline testing time via automation</span>
+            <span class="impact-number">Real-time</span>
+            <span class="impact-desc">Operational dashboards with live data visibility</span>
           </div>
           <div class="impact-card">
-            <span class="impact-number">Weekly</span>
-            <span class="impact-desc">Automated model retraining cycle</span>
+            <span class="impact-number">Zero</span>
+            <span class="impact-desc">Silent pipeline failures — all monitored with alerting</span>
           </div>
         </div>
       </div>
