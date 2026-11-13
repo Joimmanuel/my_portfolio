@@ -762,6 +762,10 @@ section { padding: 80px 0; }
 }
 
 /* Contact Form */
+.contact-form {
+  background: #ffffff;
+}
+
 .contact-form .form-control {
   border: 1.5px solid var(--border) !important;
   border-radius: 8px !important;
@@ -770,9 +774,10 @@ section { padding: 80px 0; }
   font-family: inherit !important;
   color: #0f172a !important;
   background-color: #ffffff !important;
-  transition: border-color 0.2s;
+  background: #ffffff !important;
   box-shadow: none !important;
   -webkit-appearance: none;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 
 .contact-form .form-control:focus {
@@ -780,6 +785,7 @@ section { padding: 80px 0; }
   border-color: var(--accent) !important;
   box-shadow: 0 0 0 3px rgba(37,99,235,0.1) !important;
   background-color: #ffffff !important;
+  background: #ffffff !important;
   color: #0f172a !important;
 }
 
@@ -790,10 +796,13 @@ section { padding: 80px 0; }
 
 .contact-form .form-control:-webkit-autofill,
 .contact-form .form-control:-webkit-autofill:hover,
-.contact-form .form-control:-webkit-autofill:focus {
+.contact-form .form-control:-webkit-autofill:focus,
+.contact-form .form-control:-webkit-autofill:active {
   -webkit-text-fill-color: #0f172a !important;
   -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
-  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  caret-color: #0f172a;
 }
 
 .contact-form textarea.form-control { resize: vertical; }
