@@ -1,270 +1,116 @@
-/**
-* Template Name: iPortfolio - v3.5.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+(function () {
+  'use strict';
 
-(function() {
-  "use strict";
+  // ===== Mobile Nav =====
+  const sidebar = document.getElementById('sidebar');
+  const navToggle = document.querySelector('.mobile-nav-toggle');
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      const icon = navToggle.querySelector('i');
+      icon.classList.toggle('bi-list');
+      icon.classList.toggle('bi-x');
+    });
   }
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
+  // Close sidebar on nav link click (mobile)
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 1200) {
+        sidebar.classList.remove('open');
+        const icon = navToggle.querySelector('i');
+        icon.classList.add('bi-list');
+        icon.classList.remove('bi-x');
       }
-    }
-  }
-
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
-
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let body = select('body')
-      if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
+    });
   });
 
-  /**
-   * Hero type effect
-   */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
+  // ===== Smooth Scroll =====
+  document.querySelectorAll('.scrollto').forEach(el => {
+    el.addEventListener('click', function (e) {
+      const target = document.querySelector(this.hash);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ===== Active Nav on Scroll =====
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link.scrollto');
+
+  const setActiveNav = () => {
+    const scrollY = window.scrollY + 200;
+    sections.forEach(section => {
+      if (scrollY >= section.offsetTop && scrollY < section.offsetTop + section.offsetHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.hash === '#' + section.id) link.classList.add('active');
+        });
+      }
+    });
+  };
+
+  window.addEventListener('scroll', setActiveNav);
+  window.addEventListener('load', setActiveNav);
+
+  // ===== Back to Top =====
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('active', window.scrollY > 100);
+    });
+    backToTop.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ===== Typed.js =====
+  const typedEl = document.querySelector('.typed');
+  if (typedEl) {
+    const items = typedEl.getAttribute('data-typed-items').split(',');
     new Typed('.typed', {
-      strings: typed_strings,
+      strings: items,
       loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
+      typeSpeed: 80,
+      backSpeed: 40,
       backDelay: 2000
     });
   }
 
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
-   * Porfolio isotope and filter
-   */
+  // ===== AOS =====
   window.addEventListener('load', () => {
-    // Cari container portfolio
-    let portfolioContainer = document.querySelector('.portfolio-container');
-
-    if (portfolioContainer) {
-      // --- LANGKAH PENTING: Mendefinisikan/Membuat portfolioIsotope ---
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows',
-        filter: '.filter-app' // Tampilan awal: Web Development
-      });
-
-      // Cari semua tombol filter
-      let portfolioFilters = document.querySelectorAll('#portfolio-flters li');
-
-      portfolioFilters.forEach(el => {
-        el.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          // Hapus class active dari semua tombol, tambah ke yang diklik
-          portfolioFilters.forEach(filter => filter.classList.remove('filter-active'));
-          this.classList.add('filter-active');
-
-          // Panggil variabel portfolioIsotope yang sudah dibuat di atas
-          portfolioIsotope.arrange({
-            filter: this.getAttribute('data-filter')
-          });
-
-          // Jika Anda menggunakan animasi AOS
-          if (typeof AOS !== 'undefined') {
-            portfolioIsotope.on('arrangeComplete', function() {
-              AOS.refresh();
-            });
-          }
-        });
-      });
-    }
+    AOS.init({ duration: 700, easing: 'ease-out', once: true });
   });
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-   /*
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
-
-  /**
-   * Animation on scroll
-   */
+  // ===== Portfolio Isotope =====
   window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
+    const portfolioContainer = document.querySelector('.portfolio-container');
+    if (!portfolioContainer) return;
+
+    const iso = new Isotope(portfolioContainer, {
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows',
+      filter: '.filter-app'
+    });
+
+    document.querySelectorAll('#portfolio-flters li').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#portfolio-flters li').forEach(b => b.classList.remove('filter-active'));
+        this.classList.add('filter-active');
+        iso.arrange({ filter: this.getAttribute('data-filter') });
+      });
+    });
   });
 
-})()
+  // ===== GLightbox =====
+  window.addEventListener('load', () => {
+    if (typeof GLightbox !== 'undefined') {
+      GLightbox({ selector: '.portfolio-lightbox' });
+    }
+  });
+
+})();
