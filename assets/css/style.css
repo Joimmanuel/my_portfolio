@@ -763,20 +763,28 @@ section { padding: 80px 0; }
 
 /* Contact Form */
 .contact-form .form-control {
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 14px;
-  font-size: 14px;
-  font-family: inherit;
-  color: var(--text-dark);
-  background: var(--bg);
+  border: 1.5px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  color: var(--text-dark) !important;
+  background: #ffffff !important;
   transition: border-color 0.2s;
+  box-shadow: none !important;
 }
 
 .contact-form .form-control:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  outline: none !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1) !important;
+  background: #ffffff !important;
+  color: var(--text-dark) !important;
+}
+
+.contact-form .form-control::placeholder {
+  color: var(--text-light);
+  opacity: 1;
 }
 
 .contact-form textarea.form-control { resize: vertical; }
