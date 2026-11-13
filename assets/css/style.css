@@ -262,6 +262,24 @@ section { padding: 80px 0; }
   box-shadow: 0 6px 20px rgba(37,99,235,0.4);
 }
 
+.btn-outline {
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--text-dark);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .btn-download {
   padding: 12px 20px;
   background: #f8fafc;

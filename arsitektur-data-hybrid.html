@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Arsitektur Data Hybrid – Jonathan Immanuel</title>
+  <link href="assets/img/jfavicon1.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/project.css" rel="stylesheet">
+</head>
+<body class="project-page">
+
+  <nav class="project-nav">
+    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Kembali ke Portfolio</a>
+    <span class="project-nav-title">Detail Proyek</span>
+    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> Unduh CV</a>
+  </nav>
+
+  <main class="project-main">
+
+    <div class="project-hero" data-aos="fade-up">
+      <div class="project-meta-top">
+        <span class="project-tag">Data Engineering</span>
+        <span class="project-tag">Hybrid Cloud</span>
+        <span class="project-tag">ML Pipeline</span>
+      </div>
+      <h1>Arsitektur Data Hybrid<br>dengan Pipeline ML Scoring</h1>
+      <p class="project-lead">Perancangan platform data hybrid yang menghubungkan infrastruktur on-premise dengan cloud, terintegrasi dengan pipeline machine learning untuk collection scoring — meningkatkan efisiensi operasional penagihan pada perusahaan multifinance.</p>
+    </div>
+
+    <div class="project-image" data-aos="fade-up">
+      <img src="portfolio/Mockup - Project 3.png" alt="Arsitektur Data Hybrid dengan ML Pipeline">
+    </div>
+
+    <div class="project-body">
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-exclamation-circle"></i> Latar Belakang</h2>
+        <p>Klien multifinance membutuhkan modernisasi operasional penagihan dengan menghadirkan kemampuan prediktif berbasis machine learning. Sistem yang ada tidak memiliki kapabilitas ML sama sekali, dan tim collection sepenuhnya bergantung pada prioritisasi manual. Selain itu, infrastruktur data yang terfragmentasi — data transaksional on-premise tidak dapat terhubung langsung ke layanan ML berbasis cloud — menciptakan kesenjangan antara tim data engineering dan data science.</p>
+      </div>
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-lightbulb"></i> Solusi</h2>
+        <p>Merancang arsitektur hybrid yang menjembatani SQL Server on-premise dengan GCP untuk pelatihan dan inferensi model ML. Apache Airflow digunakan sebagai lapisan orkestrasi terpusat yang mengelola perpindahan data, jadwal retraining model, dan pengiriman hasil scoring kembali ke sistem operasional.</p>
+        <ul class="solution-list">
+          <li><i class="bi bi-check2"></i> Pipeline hybrid: SQL Server on-premise → GCP BigQuery → model ML → hasil scoring</li>
+          <li><i class="bi bi-check2"></i> Deployment Airflow DAG untuk orkestrasi dan penjadwalan pipeline end-to-end</li>
+          <li><i class="bi bi-check2"></i> Implementasi model collection scoring dengan retraining otomatis setiap minggu</li>
+          <li><i class="bi bi-check2"></i> Framework automated unit testing menggunakan Spark dan Python</li>
+          <li><i class="bi bi-check2"></i> Dashboard real-time di Apache Superset dan Power BI untuk monitoring tim collection</li>
+        </ul>
+      </div>
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-stack"></i> Teknologi yang Digunakan</h2>
+        <div class="tech-grid">
+          <div class="tech-item"><i class="bi bi-calendar3"></i><span>Apache Airflow</span></div>
+          <div class="tech-item"><i class="bi bi-lightning"></i><span>Apache Spark</span></div>
+          <div class="tech-item"><i class="bi bi-cloud"></i><span>Google Cloud Platform</span></div>
+          <div class="tech-item"><i class="bi bi-database"></i><span>SQL Server</span></div>
+          <div class="tech-item"><i class="bi bi-filetype-py"></i><span>Python</span></div>
+          <div class="tech-item"><i class="bi bi-bar-chart-line"></i><span>Power BI & Superset</span></div>
+        </div>
+      </div>
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-graph-up-arrow"></i> Hasil & Dampak</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <span class="impact-number">25%</span>
+            <span class="impact-desc">Peningkatan efisiensi pemulihan piutang</span>
+          </div>
+          <div class="impact-card">
+            <span class="impact-number">40%</span>
+            <span class="impact-desc">Pengurangan waktu pengujian pipeline</span>
+          </div>
+          <div class="impact-card">
+            <span class="impact-number">Mingguan</span>
+            <span class="impact-desc">Siklus retraining model otomatis</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="project-nav-bottom" data-aos="fade-up">
+      <a href="migrasi-data-warehouse.html" class="btn-outline-project"><i class="bi bi-arrow-left"></i> Proyek Sebelumnya</a>
+      <a href="index.html#portfolio" class="btn-primary-project"><i class="bi bi-grid"></i> Semua Proyek</a>
+    </div>
+
+  </main>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>
