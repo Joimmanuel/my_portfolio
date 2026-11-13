@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Data Warehouse Migration – Jonathan Immanuel</title>
+  <link href="assets/img/jfavicon1.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/project.css" rel="stylesheet">
+</head>
+<body class="project-page">
+
+  <nav class="project-nav">
+    <a href="index.html#portfolio" class="back-link"><i class="bi bi-arrow-left"></i> Back to Portfolio</a>
+    <span class="project-nav-title">Project Detail</span>
+    <a href="assets/CV_Jonathan_Immanuel.pdf" download class="btn-download-sm"><i class="bi bi-download"></i> CV</a>
+  </nav>
+
+  <main class="project-main">
+
+    <div class="project-hero" data-aos="fade-up">
+      <div class="project-meta-top">
+        <span class="project-tag">Data Engineering</span>
+        <span class="project-tag">Migration</span>
+        <span class="project-tag">Big Data</span>
+      </div>
+      <h1>Data Warehouse Migration<br>to Distributed Platform</h1>
+      <p class="project-lead">End-to-end migration of a legacy on-premise data warehouse to a distributed Big Data platform using Hadoop and Hive, enabling horizontal scalability and real-time analytics for a large-scale FMCG enterprise.</p>
+    </div>
+
+    <div class="project-image" data-aos="fade-up">
+      <img src="portfolio/Mockup - Project 2.png" alt="Data Warehouse Migration Architecture">
+    </div>
+
+    <div class="project-body">
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-exclamation-circle"></i> Problem</h2>
+        <p>An FMCG enterprise (OT Group) was operating a monolithic data warehouse that could no longer handle the growing data volume from nationwide distribution operations. The system processed data from 10,000+ sales agents across Indonesia, resulting in query timeouts, overnight batch failures, and inability to support real-time business decisions. Storage costs were also escalating with traditional RDBMS scaling.</p>
+      </div>
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-lightbulb"></i> Solution</h2>
+        <p>Led the migration from a traditional RDBMS-based warehouse to a Hadoop ecosystem, introducing Hive as the distributed query layer and Dremio as the data lake access platform. The migration was executed in phases to ensure zero downtime for business operations.</p>
+        <ul class="solution-list">
+          <li><i class="bi bi-check2"></i> Phased migration strategy: parallel run → cutover → decommission</li>
+          <li><i class="bi bi-check2"></i> Implemented Hive partitioning and bucketing for optimized query performance</li>
+          <li><i class="bi bi-check2"></i> Deployed Dremio as a self-service data lake engine for business analysts</li>
+          <li><i class="bi bi-check2"></i> Built automated incentive calculation pipelines replacing manual Excel processes</li>
+          <li><i class="bi bi-check2"></i> Integrated Apache Spark for complex aggregation workloads</li>
+        </ul>
+      </div>
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-stack"></i> Tech Stack</h2>
+        <div class="tech-grid">
+          <div class="tech-item"><i class="bi bi-hdd-network"></i><span>Hadoop (HDFS)</span></div>
+          <div class="tech-item"><i class="bi bi-table"></i><span>Apache Hive</span></div>
+          <div class="tech-item"><i class="bi bi-lightning"></i><span>Apache Spark</span></div>
+          <div class="tech-item"><i class="bi bi-layers"></i><span>Dremio</span></div>
+          <div class="tech-item"><i class="bi bi-gear"></i><span>Apache ZooKeeper</span></div>
+          <div class="tech-item"><i class="bi bi-filetype-py"></i><span>Python</span></div>
+        </div>
+      </div>
+
+      <div class="project-section" data-aos="fade-up">
+        <h2><i class="bi bi-graph-up-arrow"></i> Impact</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <span class="impact-number">10TB+</span>
+            <span class="impact-desc">Daily data processed without bottleneck</span>
+          </div>
+          <div class="impact-card">
+            <span class="impact-number">60%</span>
+            <span class="impact-desc">Query performance improvement</span>
+          </div>
+          <div class="impact-card">
+            <span class="impact-number">Days → Hours</span>
+            <span class="impact-desc">Incentive report processing time</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="project-nav-bottom" data-aos="fade-up">
+      <a href="project-1.html" class="btn-outline-project"><i class="bi bi-arrow-left"></i> Previous</a>
+      <a href="project-3.html" class="btn-primary-project">Next Project <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+  </main>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

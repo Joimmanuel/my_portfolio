@@ -262,21 +262,27 @@ section { padding: 80px 0; }
   box-shadow: 0 6px 20px rgba(37,99,235,0.4);
 }
 
-.btn-outline {
-  padding: 12px 28px;
-  background: transparent;
+.btn-download {
+  padding: 12px 20px;
+  background: #f8fafc;
   color: var(--text-dark);
   border: 1.5px solid var(--border);
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   transition: all 0.2s;
 }
 
-.btn-outline:hover {
+.btn-download:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: var(--accent-light);
 }
+
+.btn-download i { font-size: 15px; }
 
 /* Hero Metrics */
 .hero-metrics {
@@ -664,7 +670,22 @@ section { padding: 80px 0; }
   transition: background 0.2s;
 }
 
-.portfolio-overlay a:hover { background: #1d4ed8; }
+.portfolio-overlay a:hover { background: #1d4ed8; color: #fff; }
+
+.portfolio-detail-link {
+  width: 38px; height: 38px;
+  background: var(--accent);
+  color: #fff !important;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.portfolio-detail-link:hover {
+  background: #1d4ed8;
+  transform: translateX(3px);
+}
 
 /* ===== CONTACT ===== */
 .contact-grid {
