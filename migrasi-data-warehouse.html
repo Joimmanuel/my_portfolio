@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Migrasi Data Warehouse – Jonathan Immanuel</title>
-  <link href="assets/img/jfavicon1.png" rel="icon">
+  <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -29,7 +29,7 @@
         <span class="project-tag">Big Data</span>
       </div>
       <h1>Migrasi Data Warehouse<br>ke Platform Terdistribusi</h1>
-      <p class="project-lead">Migrasi end-to-end dari data warehouse on-premise yang sudah usang ke platform Big Data terdistribusi menggunakan Hadoop dan Hive — memungkinkan skalabilitas horizontal dan analitik skala besar untuk perusahaan FMCG nasional.</p>
+      <p class="project-lead">Migrasi end-to-end dari data warehouse on-premise berbasis Sybase ke platform Big Data terdistribusi menggunakan Hadoop dan Hive — memungkinkan skalabilitas horizontal dan analitik real-time untuk klien multifinance enterprise di PT. Adicipta Inovasi Teknologi.</p>
     </div>
 
     <div class="project-image" data-aos="fade-up">
@@ -40,18 +40,18 @@
 
       <div class="project-section" data-aos="fade-up">
         <h2><i class="bi bi-exclamation-circle"></i> Latar Belakang</h2>
-        <p>Perusahaan FMCG (OT Group) mengoperasikan data warehouse monolitik yang tidak lagi mampu menangani volume data dari operasi distribusi nasional. Sistem memproses data dari lebih dari 10.000 agen penjualan di seluruh Indonesia, mengakibatkan query timeout, kegagalan batch malam hari, dan ketidakmampuan mendukung keputusan bisnis secara real-time. Biaya penyimpanan juga terus meningkat seiring keterbatasan skalabilitas RDBMS konvensional.</p>
+        <p>Klien multifinance di PT. Adicipta Inovasi Teknologi (AdIns) mengoperasikan data warehouse monolitik berbasis Sybase yang tidak lagi mampu menangani pertumbuhan volume data transaksi pembiayaan. Sistem mengalami query timeout pada jam sibuk, kegagalan batch malam hari, dan tidak mampu mendukung kebutuhan analitik real-time. Skalabilitas vertikal RDBMS konvensional sudah mencapai batasnya, sementara volume data terus bertumbuh seiring ekspansi portofolio klien.</p>
       </div>
 
       <div class="project-section" data-aos="fade-up">
         <h2><i class="bi bi-lightbulb"></i> Solusi</h2>
-        <p>Memimpin migrasi dari RDBMS konvensional ke ekosistem Hadoop, dengan Hive sebagai lapisan query terdistribusi dan Dremio sebagai platform akses data lake. Migrasi dilakukan secara bertahap untuk memastikan operasional bisnis tidak terganggu selama proses berlangsung.</p>
+        <p>Memimpin migrasi dari Sybase ke ekosistem Hadoop, dengan Hive sebagai lapisan query terdistribusi dan Dremio sebagai platform akses data lake untuk tim analis. Migrasi dilakukan secara bertahap dengan strategi parallel run untuk memastikan zero downtime pada operasional bisnis klien.</p>
         <ul class="solution-list">
-          <li><i class="bi bi-check2"></i> Strategi migrasi bertahap: parallel run → cutover → decommission</li>
-          <li><i class="bi bi-check2"></i> Implementasi Hive partitioning dan bucketing untuk optimasi performa query</li>
-          <li><i class="bi bi-check2"></i> Deployment Dremio sebagai self-service data lake engine untuk tim analis bisnis</li>
-          <li><i class="bi bi-check2"></i> Pembangunan pipeline otomatis untuk kalkulasi insentif menggantikan proses Excel manual</li>
-          <li><i class="bi bi-check2"></i> Integrasi Apache Spark untuk workload agregasi data yang kompleks</li>
+          <li><i class="bi bi-check2"></i> Strategi migrasi bertahap: parallel run → validasi data → cutover → decommission</li>
+          <li><i class="bi bi-check2"></i> Implementasi Hive partitioning dan bucketing untuk optimasi performa query pelaporan multifinance</li>
+          <li><i class="bi bi-check2"></i> Deployment Dremio sebagai self-service data lake engine untuk tim analis bisnis klien</li>
+          <li><i class="bi bi-check2"></i> Migrasi pipeline ETL dari SSIS ke Spark job untuk workload agregasi data yang kompleks</li>
+          <li><i class="bi bi-check2"></i> Pembangunan lapisan data mart baru untuk kebutuhan pelaporan regulasi OJK</li>
         </ul>
       </div>
 
