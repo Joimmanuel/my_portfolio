@@ -1,6 +1,5 @@
 async function processTranslationWithGemini() {
-    /*const apiKey = document.getElementById('apiKey').value.trim();*/
-	const apiKey = "AIzaSyD2RNGD75inFm3P-_yRZIwrCHMDnj7L280";
+    const apiKey = document.getElementById('apiKey').value.trim();
     const textRaw = document.getElementById('inputText').value.trim();
     const outputArea = document.getElementById('outputArea');
 
@@ -13,7 +12,7 @@ async function processTranslationWithGemini() {
         return;
     }
 
-    outputArea.innerHTML = '<div class="loading-text">Mencari model AI yang tersedia dan menerjemahkan... Mohon tunggu sebentar.</div>';
+    outputArea.innerHTML = '<div class="loading-text">Menerjemahkan... Mohon tunggu sebentar.</div>';
 
     const systemPrompt = `
     Tugasmu adalah sebagai penerjemah ahli bahasa Mandarin dan Indonesia sesuai EYD.
@@ -21,13 +20,13 @@ async function processTranslationWithGemini() {
     
     KEMBALIKAN OUTPUT HANYA DALAM FORMAT JSON ARRAY SEPERTI INI, TANPA KATA-KATA LAIN DI AWAL ATAU DI AKHIR:
     [
-      { "hanyu": "Tulisan Mandarin aslinya (pertahankan emoji)", "pinyin": "Pinyin DENGAN NADA mandarin spasi per kata", "indo": "Terjemahan bahasa Indonesia sesuai EYDs" }
+      { "hanyu": "Tulisan Mandarin aslinya (pertahankan emoji)", "pinyin": "Pinyin DENGAN NADA mandarin spasi per kata", "indo": "Terjemahan bahasa Indonesia sesuai EYD" }
     ]
     
     Teks yang harus diproses:
     ${textRaw}
     `;
-	
+
     try {
         const listModelsUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`;
         const modelCheckRes = await fetch(listModelsUrl);
@@ -37,7 +36,7 @@ async function processTranslationWithGemini() {
             throw new Error(`Gagal mengecek model: ${modelCheckData.error.message}`);
         }
 
-        const validModels = modelCheckData.models.filter(m => 
+        const validModels = modelCheckData.models.filter(m =>
             m.supportedGenerationMethods && m.supportedGenerationMethods.includes("generateContent")
         );
 
@@ -45,10 +44,9 @@ async function processTranslationWithGemini() {
             throw new Error("API Key ini tidak memiliki akses ke model teks apa pun.");
         }
 
-        // KITA PAKSA MENGGUNAKAN FLASH AGAR LIMITNYA BESAR (15 Request / Menit)
-        let selectedModelName = validModels[0].name; 
-        const preferredModels = ["gemini-3.1-flash", "gemini-2.0-flash", "gemini-1.5-flash", "gemini-flash"];
-        
+        let selectedModelName = validModels[0].name;
+        const preferredModels = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-flash", "gemini-2.0", "gemini-1.5"];
+
         for (let pref of preferredModels) {
             const found = validModels.find(m => m.name.includes(pref));
             if (found) {
@@ -58,25 +56,18 @@ async function processTranslationWithGemini() {
         }
 
         const url = `https://generativelanguage.googleapis.com/v1beta/${selectedModelName}:generateContent?key=${apiKey}`;
-        
+
         const response = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{
-                    parts: [{ text: systemPrompt }]
-                }],
-                generationConfig: {
-                    temperature: 0.2
-                }
+                contents: [{ parts: [{ text: systemPrompt }] }],
+                generationConfig: { temperature: 0.2 }
             })
         });
 
         const data = await response.json();
 
-		// Tangkap error dari server Google
         if (data.error) {
             if (data.error.message.includes("high demand") || data.error.code === 503) {
                 throw new Error("⏳ Server AI Google saat ini sedang penuh/sibuk (High Demand).<br>Tunggu sekitar 1 menit, lalu coba klik Terjemahkan lagi ya!");
@@ -88,17 +79,15 @@ async function processTranslationWithGemini() {
         }
 
         let geminiResponseText = data.candidates[0].content.parts[0].text;
-        
         const jsonMatch = geminiResponseText.match(/\[[\s\S]*\]/);
-        
+
         if (!jsonMatch) {
             throw new Error("AI tidak mengembalikan format JSON yang benar.");
         }
 
-        const cleanJsonString = jsonMatch[0];
-        const translatedArray = JSON.parse(cleanJsonString);
+        const translatedArray = JSON.parse(jsonMatch[0]);
 
-        let finalHTML = `<div style="margin-bottom: 15px; font-size: 12px; color: #7f8c8d;">Menggunakan model kecepatan tinggi: ${selectedModelName}</div>`;
+        let finalHTML = `<div style="margin-bottom:15px;font-size:12px;color:#7f8c8d;">Model: ${selectedModelName}</div>`;
         translatedArray.forEach(item => {
             finalHTML += `
                 <div class="result-block">
@@ -113,10 +102,9 @@ async function processTranslationWithGemini() {
 
     } catch (error) {
         outputArea.innerHTML = `
-            <div class="result-block" style="border-left-color: #f39c12; background-color: #fdfae3;">
-                <div class="result-row" style="color: #d35400;">
-                    <b>Pesan Sistem:</b><br><br>
-                    ${error.message}
+            <div class="result-block" style="border-left-color:#f39c12;background-color:#fdfae3;">
+                <div class="result-row" style="color:#d35400;">
+                    <b>Pesan Sistem:</b><br><br>${error.message}
                 </div>
             </div>
         `;
