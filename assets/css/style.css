@@ -531,6 +531,15 @@ section { padding: 80px 0; }
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-content h4 i {
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
 .timeline-company {
