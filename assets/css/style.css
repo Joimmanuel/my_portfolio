@@ -542,12 +542,25 @@ section { padding: 80px 0; }
   flex-shrink: 0;
 }
 
+.edu-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .timeline-company {
   font-size: 13px;
   font-weight: 500;
   color: var(--text-light);
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+
+.timeline-company i { color: var(--accent); font-size: 13px; }
 
 .timeline-content ul { margin-top: 8px; }
 
