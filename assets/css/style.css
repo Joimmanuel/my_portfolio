@@ -858,6 +858,12 @@ section { padding: 80px 0; }
 .form-success { color: #16a34a; font-weight: 600; }
 .form-error { color: #ef4444; }
 
+#contact, #contact .contact-grid, #contact .contact-info, #contact .contact-form {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
 /* ===== FOOTER ===== */
 #footer {
   background: var(--primary);
